@@ -1,32 +1,35 @@
+# try camel case for variables and functions
+# try pascal case for objects
+
 import random
 import time
 
 
 revolution = 0
-Cyl = [0,0,0,0,0]
+cyl = [0,0,0,0,0]
 
 
-#load
-ind = random.randint(1,5)
-bulletChamber = ind % 5
-Cyl[bulletChamber] = 1
+## load
+
+bulletChamber = random.randint(1,5) % 5
+cyl[bulletChamber] = 1
 
 
-activeChamber = Cyl[0]
+activeChamber = cyl[0]
 
 
 def revolve():
-   global Cyl, bulletChamber, activeChamber, revolution
-   Cyl = Cyl[1:] + Cyl[:1]
+   global cyl, bulletChamber, activeChamber, revolution
+   cyl = cyl[1:] + cyl[:1]
    if bulletChamber == 0:
-       bulletChamber = (len(Cyl)) - 1
+       bulletChamber = (len(cyl)) - 1
    else:
        bulletChamber -= 1
-   activeChamber = Cyl[0]
+   activeChamber = cyl[0]
    revolution += 1
 
 
-def Fire():
+def fire():
     global activeChamber
     if activeChamber == 1:
         print("BANG")
@@ -36,23 +39,32 @@ def Fire():
 
 ##############################
 
-coinFlip = input("A coin is flipped\nheads\ntails\n")
-if coinFlip == "heads" or coinFlip == "tails":
-    if coinFlip == "heads":
+coinFlipW = input("A coin is flipped\nheads\ntails\n")
+
+if coinFlipW == "heads" or coinFlipW == "tails":
+
+    if coinFlipW == "heads":
         coinFlipV = 0
-    elif coinFlip == "tails":
+
+    elif coinFlipW == "tails":
         coinFlipV = 1
+
 else:
     coinFlipLoop = 0
+    
     while coinFlipLoop != 1:
         print("Sorry, I don't understand,")
-        coinFlip = input("A coin is flipped\nheads\ntails\n")
-        if coinFlip == "heads" or coinFlip == "tails":
+        
+        coinFlipW = input("A coin is flipped\nheads\ntails\n")
+        
+        if coinFlipW == "heads" or coinFlipW == "tails":
             coinFlipLoop = 1
 
 ### Maybe have a mechanic where the play chooses how hard to spin the cylinder ###
-r1c = 0
-while r1c != 1:
+
+## round 1 Continue
+r1C = 0
+while r1C != 1:
     revolve()
     print()
     print(f"REVOLUTION {(revolution)}")
@@ -61,12 +73,12 @@ while r1c != 1:
 
     print()
 
-    if coinFlip == 1:
+    if coinFlipV == 1:
         print()
         print("He shoots")
         time.sleep(0.5)
         if activeChamber == 1:
-            Fire()
+            fire()
             r1c = 1
             Continue = 1
             print("It was a live round, he died")
@@ -74,19 +86,23 @@ while r1c != 1:
 
 
         else:
-            Fire()
+            fire()
             print("It was an empty chamber")
             time.sleep(0.5)
             revolve()
             print()
             print(f"REVOLUTION {(revolution)}")
             time.sleep(1)
-
+    
+    # skipped E turn always if coinFlipV not set to one
+    else:
+        coinFlipV = 1
 
     print()
 
     ################################NO ITEMS ################################
     
+    # I don't like 
     Continue = 0
     while Continue != 1:
         Target = input("Shoot yourself or him?\n\"me\"\n\"him\"\n")
@@ -95,11 +111,11 @@ while r1c != 1:
 
         if Target == "me":
             if activeChamber == 1:
-                Fire()
+                fire()
                 exit()
             else:
                 time.sleep(0.5)
-                Fire()
+                fire()
                 print("It was a blank round")
                 time.sleep(0.5)
                 Continue = 1
@@ -107,21 +123,20 @@ while r1c != 1:
 
         elif Target == "him":
             if activeChamber == 1:
-                Fire()
+                fire()
                 print("You did it, he's done for")
                 r1c = 1
                 Continue = 1
             else:
-                Fire()
+                fire()
                 print()
                 print("Ooh, that's now how the game's played, they turn the gun to you and pull the trigger continuously")
                 time.sleep(1)
                 while True:
-                    Fire()
+                    fire()
                     if activeChamber == 1:
                         exit()
                     revolve()
 
 
 print("You win")
-
