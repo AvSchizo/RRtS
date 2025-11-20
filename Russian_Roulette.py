@@ -39,15 +39,18 @@ def fire():
 
 ##############################
 
+# coin flipped
+coinFlipV = random.randint(0,1)
+
 coinFlipW = input("A coin is flipped\nheads\ntails\n")
 
 if coinFlipW == "heads" or coinFlipW == "tails":
 
     if coinFlipW == "heads":
-        coinFlipV = 0
+        pass
 
     elif coinFlipW == "tails":
-        coinFlipV = 1
+        pass
 
 else:
     coinFlipLoop = 0
@@ -73,6 +76,7 @@ while r1C != 1:
 
     print()
 
+    # if coin flip was 
     if coinFlipV == 1:
         print()
         print("He shoots")
