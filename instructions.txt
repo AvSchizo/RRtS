@@ -1,4 +1,9 @@
+# add current changes to the server
 git add .
 git commit -m "the current changes description"
 git push origin main
+
+# get changes from the server
+git pull
+
 
