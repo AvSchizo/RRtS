@@ -1,5 +1,4 @@
 # try camel case for variables and functions
-# try pascal case for objects
 
 import random
 import time
