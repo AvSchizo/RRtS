@@ -13,7 +13,8 @@ gun = gunClass()
 
 ## load
 
-gun.bulletChamber = random.randint(1,5) % 5
+gun.bulletChamber = 1
+# gun.bulletChamber = random.randint(1,5) % 5
 gun.cyl[gun.bulletChamber] = 1
 
 gun.activeChamber = gun.cyl[0]
@@ -46,7 +47,7 @@ def revPrint(gun):
     print(f"REVOLUTION {gun.revolution}")
 
 
-##############################
+################################ NO ITEMS ################################
 
 ## Flip_Coin.py coin flip
 coinFlipV = Flip_Coin.flipCoin()
@@ -55,6 +56,7 @@ coinFlipV = Flip_Coin.flipCoin()
 
 ## round 1 Continue
 r1C = 0
+cont = 0
 
 while r1C != 1:
     
@@ -66,14 +68,14 @@ while r1C != 1:
     if coinFlipV == 1:
         
         print()
-        print("He shoots")
+        print("He shoots himself")
         time.sleep(0.5)
         if gun.activeChamber == 1:
             
             fire(gun)
             
             r1c = 1
-            Continue = 1
+            cont = 1
             
             print("It was a live round, he died")
             # if have trouble later not continue to next round look here
@@ -95,12 +97,9 @@ while r1C != 1:
         coinFlipV = 1
 
     print()
-
-    ################################ NO ITEMS ################################
     
-    # I don't like 
-    Continue = 0
-    while Continue != 1:
+    
+    while cont != 1:
         Target = input("Shoot yourself or him?\n\"me\"\n\"him\"\n")
         print()
 
@@ -111,7 +110,7 @@ while r1C != 1:
                 fire(gun)
                 
                 r1c = 1
-                Continue = 1
+                cont = 1
                 
                 exit()
                 
@@ -120,10 +119,10 @@ while r1C != 1:
                 time.sleep(0.5)
                 
                 fire(gun)
-                print("It was a blank round")
+                print("It was an empty chamber")
                 time.sleep(0.5)
                 
-                Continue = 1
+                cont = 1
 
 
         elif Target == "him":
@@ -134,9 +133,10 @@ while r1C != 1:
                 print("You did it, he's done for")
                 
                 r1c = 1
-                Continue = 1
+                cont = 1
+                
                 # if have trouble later not continue to next round look here
-                exit()
+                #exit()
                 
             else:
                 
@@ -145,12 +145,17 @@ while r1C != 1:
                 print("Ooh, that's now how the game's played, they turn the gun to you and pull the trigger continuously")
                 time.sleep(1)
                 
-                while True:
+                while cont != 1:
                     
                     fire(gun)
                     if gun.activeChamber == 1:
+                        
+                        r1c = 1
+                        cont = 1
+                        
+                        # if have trouble later not continue to next round look here
                         exit()
-                    
+
                     revolve(gun)
 
 
