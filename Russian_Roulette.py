@@ -2,6 +2,7 @@
 
 import random
 import time
+import Flip_Coin
 
 
 revolution = 0
@@ -38,29 +39,8 @@ def fire():
 
 ##############################
 
-# coin flipped
-coinFlipV = random.randint(0,1)
 
-coinFlipW = input("A coin is flipped\nheads\ntails\n")
-
-if coinFlipW == "heads" or coinFlipW == "tails":
-
-    if coinFlipW == "heads":
-        pass
-
-    elif coinFlipW == "tails":
-        pass
-
-else:
-    coinFlipLoop = 0
-    
-    while coinFlipLoop != 1:
-        print("Sorry, I don't understand,")
-        
-        coinFlipW = input("A coin is flipped\nheads\ntails\n")
-        
-        if coinFlipW == "heads" or coinFlipW == "tails":
-            coinFlipLoop = 1
+coinFlipV = Flip_Coin.flipCoin()
 
 ### Maybe have a mechanic where the play chooses how hard to spin the cylinder ###
 
@@ -75,7 +55,7 @@ while r1C != 1:
 
     print()
 
-    # if coin flip was 
+    # if coin flip was 1
     if coinFlipV == 1:
         print()
         print("He shoots")
