@@ -2,21 +2,12 @@
 
 import random
 import time
+
 import Flip_Coin
+import Gun_Object
 
-class gunClass:
-    revolution = 0
-    cyl = [0,0,0,0,0]
-
-gun = gunClass()
-
-
-## load
-
-gun.bulletChamber = random.randint(1,5) % 5
-gun.cyl[gun.bulletChamber] = 1
-
-gun.activeChamber = gun.cyl[0]
+# set up gun
+gun = Gun_Object.gun
 
 
 def revolve(gun):
@@ -67,7 +58,7 @@ while r1C != 1:
     if coinFlipV == 1:
         
         print()
-        print("He shoots himself")
+        print("He shoots at himself")
         time.sleep(0.5)
         if gun.activeChamber == 1:
             
@@ -97,13 +88,14 @@ while r1C != 1:
 
     print()
     
-    
+    cont = 0
+
     while cont != 1:
-        Target = input("Shoot yourself or him?\nme\nhim\n")
+        playerTarget = input("Shoot yourself or him?\nme\nhim\n")
         print()
 
 
-        if Target == "me":
+        if playerTarget == "me":
             
             if gun.activeChamber == 1:
                 fire(gun)
@@ -124,7 +116,7 @@ while r1C != 1:
                 cont = 1
 
 
-        elif Target == "him":
+        elif playerTarget == "him":
             
             if gun.activeChamber == 1:
                 
