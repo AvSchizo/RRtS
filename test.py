@@ -1,10 +1,18 @@
-class gunClass:
-    cyl = [1,0,0,0,0]
-    revolution = 0
+import Character_Object
 
-gun = gunClass()
+player = Character_Object.character()
 
-gun.bulletChamber = gun.cyl[0]
+enemy = Character_Object.character()
 
-print(f"gun.cyl {gun.cyl[0]}")
-print(f"gun.bulletChamber {gun.bulletChamber}")
+def addItem(player, enemy):
+    player.itemCount += 1
+    enemy.itemCount += 1
+
+print(f"player item count {player.itemCount}")
+print(f"enemy item count {enemy.itemCount}")
+
+addItem(player, enemy)
+
+print()
+print(f"player item count {player.itemCount}")
+print(f"enemy item count {enemy.itemCount}")
