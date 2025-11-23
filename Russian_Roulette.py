@@ -5,9 +5,14 @@ import time
 
 import Flip_Coin
 import Gun_Object
+import Character_Object
 
 # set up gun
 gun = Gun_Object.gun
+
+# set up characters
+player = Character_Object.player
+enemy = Character_Object.enemy
 
 
 def revolve(gun):
@@ -46,7 +51,6 @@ coinFlipV = Flip_Coin.flipCoin()
 
 ## round 1 Continue
 r1C = 0
-cont = 0
 
 while r1C != 1:
     
@@ -65,11 +69,9 @@ while r1C != 1:
             fire(gun)
             
             r1C = 1
-            cont = 1
             
             print("It was a live round, he died")
-            # if have trouble later not continue to next round look here
-            exit()
+            break
 
 
         else:
@@ -90,7 +92,7 @@ while r1C != 1:
     
     cont = 0
 
-    while cont != 1:
+    while True:
         playerTarget = input("Shoot yourself or him?\nme\nhim\n")
         print()
 
@@ -113,7 +115,7 @@ while r1C != 1:
                 print("It was an empty chamber")
                 time.sleep(0.5)
                 
-                cont = 1
+                break
 
 
         elif playerTarget == "him":

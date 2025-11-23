@@ -1,5 +1,4 @@
 import Gun_Object
 
-gun = Gun_Object.gun
-
+gun = Gun_Object.gunClass()
 print(gun.cyl)

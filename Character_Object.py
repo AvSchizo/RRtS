@@ -1,4 +1,7 @@
 class character:
     health = 1
     takeTurn = True
-    itemCount = 0
+    
+
+player = character()
+enemy = character()
