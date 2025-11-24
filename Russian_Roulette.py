@@ -5,6 +5,7 @@ import time
 
 import Flip_Coin
 import Gun_Object
+from Gun_Object import revolve
 import Character_Object
 
 # set up gun
@@ -20,16 +21,6 @@ if coinFlipV == 1:
     enemy.takeTurn = True
 else:
     enemy.takeTurn = False
-
-
-def revolve(gun):
-    gun.cyl = gun.cyl[1:] + gun.cyl[:1]
-    if gun.bulletChamber == 0:
-       gun.bulletChamber = (len(gun.cyl)) - 1
-    else:
-       gun.bulletChamber -= 1
-    gun.activeChamber = gun.cyl[0]
-    gun.revolution += 1
 
 
 def fire(gun):
