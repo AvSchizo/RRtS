@@ -124,6 +124,7 @@ while r1C != 1:
 
         elif player.target == "him":
             
+            
             if gun.activeChamber == 1:
                 
                 fire(gun)
@@ -142,6 +143,8 @@ while r1C != 1:
                 time.sleep(1)
                 
                 while True:
+
+                    revolve(gun)
                     
                     fire(gun)
                     if gun.activeChamber == 1:
@@ -151,7 +154,6 @@ while r1C != 1:
                         # if have trouble later not continue to next round look here
                         exit()
 
-                    revolve(gun)
 
 
 print("You win")
