@@ -11,8 +11,11 @@ import Character_Object
 gun = Gun_Object.gun
 
 # set up characters
-player = Character_Object.player
-enemy = Character_Object.enemy
+player = Character_Object.character()
+enemy = Character_Object.character()
+
+# set up coin flip
+coinFlipV = Flip_Coin.flipCoin()
 
 
 def revolve(gun):
@@ -43,9 +46,6 @@ def revPrint(gun):
 
 
 ################################ NO ITEMS ################################
-
-## Flip_Coin.py coin flip
-coinFlipV = Flip_Coin.flipCoin()
 
 ### Maybe have a mechanic where the play chooses how hard to spin the cylinder ###
 
@@ -90,7 +90,6 @@ while r1C != 1:
 
     print()
     
-    cont = 0
 
     while True:
         playerTarget = input("Shoot yourself or him?\nme\nhim\n")
@@ -126,7 +125,6 @@ while r1C != 1:
                 print("You did it, he's done for")
                 
                 r1C = 1
-                cont = 1
                 
                 break
 
@@ -146,7 +144,6 @@ while r1C != 1:
                     if gun.activeChamber == 1:
                         
                         r1C = 1
-                        cont = 1
                         
                         # if have trouble later not continue to next round look here
                         exit()
