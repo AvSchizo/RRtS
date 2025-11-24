@@ -16,6 +16,10 @@ enemy = Character_Object.character()
 
 # set up coin flip
 coinFlipV = Flip_Coin.flipCoin()
+if coinFlipV == 1:
+    enemy.takeTurn = True
+else:
+    enemy.takeTurn = False
 
 
 def revolve(gun):
@@ -43,6 +47,7 @@ def gunInfo(gun):
 def revPrint(gun):
     print()
     print(f"REVOLUTION {gun.revolution}")
+    time.sleep(1)
 
 
 ################################ NO ITEMS ################################
@@ -56,14 +61,14 @@ while r1C != 1:
     
     revolve(gun)
     revPrint(gun)
-    time.sleep(1)
 
 
-    if coinFlipV == 1:
+    if enemy.takeTurn == True:
         
         print()
         print("He shoots at himself")
         time.sleep(0.5)
+
         if gun.activeChamber == 1:
             
             fire(gun)
@@ -82,27 +87,27 @@ while r1C != 1:
             
             revolve(gun)
             revPrint(gun)
-            time.sleep(1)
     
-    # skipped E turn always if coinFlipV not set to 1
+    # skipped enemy turn always if coinFlipV not set to 1
     else:
-        coinFlipV = 1
+        enemy.takeTurn = True
 
     print()
     
 
+    ## PLAYER TURN ##
+
     while True:
-        playerTarget = input("Shoot yourself or him?\nme\nhim\n")
+        player.target = input("Shoot yourself or him?\nme\nhim\nanswer: ")
         print()
 
 
-        if playerTarget == "me":
+        if player.target == "me":
             
             if gun.activeChamber == 1:
                 fire(gun)
                 
                 r1C = 1
-                cont = 1
                 
                 exit()
                 
@@ -117,7 +122,7 @@ while r1C != 1:
                 break
 
 
-        elif playerTarget == "him":
+        elif player.target == "him":
             
             if gun.activeChamber == 1:
                 
@@ -128,17 +133,15 @@ while r1C != 1:
                 
                 break
 
-                # if have trouble later not continue to next round look here
-                #exit()
                 
             else:
                 
                 fire(gun)
                 print()
-                print("Ooh, that's now how the game's played, they turn the gun to you and pull the trigger continuously")
+                print("That's not how russian roulette works, he turns the gun to you and pulls the trigger continuously")
                 time.sleep(1)
                 
-                while cont != 1:
+                while True:
                     
                     fire(gun)
                     if gun.activeChamber == 1:
