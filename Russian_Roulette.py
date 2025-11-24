@@ -1,12 +1,12 @@
-# try camel case
-
 import random
 import time
 
 import Flip_Coin
 import Gun_Object
-from Gun_Object import revolve
+from Gun_Object import revolve, fire, revPrint, gunInfo
 import Character_Object
+
+#### SET UP OBJECTS ####
 
 # set up gun
 gun = Gun_Object.gun
@@ -16,29 +16,13 @@ player = Character_Object.character()
 enemy = Character_Object.character()
 
 # set up coin flip
-coinFlipV = Flip_Coin.flipCoin()
-if coinFlipV == 1:
+coinFlip = Flip_Coin.flipCoin()
+if coinFlip == 1:
     enemy.takeTurn = True
 else:
     enemy.takeTurn = False
 
 
-def fire(gun):
-    if gun.activeChamber == 1:
-        print("BANG")
-    else:
-        print("click")
-
-def gunInfo(gun):
-    print(f"CYLINDER {gun.cyl}")
-    print(f"EASY BC : {(gun.bulletChamber + 1)}")
-    print(f"RAW BULLETCHAMBER : {gun.bulletChamber}")
-    print()
-
-def revPrint(gun):
-    print()
-    print(f"REVOLUTION {gun.revolution}")
-    time.sleep(1)
 
 
 ################################ NO ITEMS ################################
