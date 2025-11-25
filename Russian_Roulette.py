@@ -22,7 +22,10 @@ if coinFlip == 1:
 else:
     enemy.takeTurn = False
 
+#### DEF FUNC ####
 
+def healthDown(character, gun):
+    character.health -= gun.damage
 
 
 ################################ NO ITEMS ################################

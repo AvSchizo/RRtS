@@ -4,6 +4,7 @@ import time
 class gunClass:
     revolution = 0
     cyl = [0,0,0,0,0]
+    damage = 1
 
 gun = gunClass()
 
@@ -38,4 +39,4 @@ def gunInfo(gun):
 def revPrint(gun):
     print()
     print(f"REVOLUTION {gun.revolution}")
-    time.sleep(1)
+    time.sleep(2)
