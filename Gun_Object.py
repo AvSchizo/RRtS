@@ -3,12 +3,13 @@ import time
 
 class gunClass:
     revolution = 0
-    cyl = [0,0,0,0,0]
+    cyl = [0,0,0,0,0,0]
     damage = 1
 
 gun = gunClass()
 
-gun.bulletChamber = random.randint(1,5) % 5
+ind = random.randint(1,(len(gun.cyl)))
+gun.bulletChamber = ind % (len(gun.cyl))
 gun.cyl[gun.bulletChamber] = 1
 gun.activeChamber = gun.cyl[0]
 
