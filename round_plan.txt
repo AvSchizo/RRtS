@@ -13,6 +13,7 @@ Round 2:
 Round 3:
     items
     stun mechanic (if character gets shot within first 2 revolutions they get stunned and get their turn skipped)
+    upgrade in enemy AI
 
 
 item_coffee:
