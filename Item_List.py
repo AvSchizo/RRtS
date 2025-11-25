@@ -1,8 +1,12 @@
+import Character_Object
+
+player = Character_Object.player
+
 class itemClass():
     pass
 
 item1 = itemClass()
-item1.name = "fish"
+item1.name = "coffee"
 item1.value = 0
 
 item2 = itemClass()
@@ -13,10 +17,7 @@ item3 = itemClass()
 item3.name = "trash"
 item3.value = 0
 
-class characterClass:
-    pass
 
-player = characterClass()
 # i dunno why but you gotta set them equal to the original items
 player.item1 = item1
 player.item2 = item2
@@ -31,4 +32,4 @@ def itemListPrint(player):
         if itemList[i].value > 0:
             print(itemList[i].name)
             print(itemList[i].value)
-itemListPrint(player)
+
