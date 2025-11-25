@@ -12,8 +12,8 @@ import Character_Object
 gun = Gun_Object.gun
 
 # set up characters
-player = Character_Object.character()
-enemy = Character_Object.character()
+player = Character_Object.player
+enemy = Character_Object.enemy
 
 # set up coin flip
 coinFlip = Flip_Coin.flipCoin()
