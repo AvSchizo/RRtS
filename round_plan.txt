@@ -1,9 +1,16 @@
-# add current changes to the server
-git add .
-git commit -m "the current changes description"
-git push origin main
+Round 1:
+    (tutorial)
+    no items
+    one bullet
+    one health
 
-# get changes from the server
-git pull
+Round 2:
+    no items
+    2 bullets
+    2 or 3 max health
+    show gun reload
 
+Round 3:
+    items
+    stun mechanic (if character gets shot within first 2 revolutions they get stunned and get their turn skipped)
 
