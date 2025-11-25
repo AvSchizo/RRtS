@@ -14,3 +14,13 @@ Round 3:
     items
     stun mechanic (if character gets shot within first 2 revolutions they get stunned and get their turn skipped)
 
+
+item_coffee:
+    completely re-spin the cylinder
+
+action_breathe:
+    skips your turn and FORCES enemy.target to be you, then increases your health but, doubles your damage taken for one turn 
+    [might be able to sync with possible future reflect damage item or something]
+
+
+
