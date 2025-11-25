@@ -13,15 +13,19 @@ item3 = itemClass()
 item3.name = "trash"
 item3.value = 1
 
-
 class characterClass:
     pass
 
-
 player = characterClass()
+# i dunno why but you gotta set them equal to the original items
 player.item1 = item1
 player.item2 = item2
 player.item3 = item3
+
+
+
+
+player.item1.value = 0
 
 
 itemList = [player.item1, player.item2, player.item3]
@@ -30,3 +34,4 @@ itemList = [player.item1, player.item2, player.item3]
 for i in range(len(itemList)):
     if itemList[i].value > 0:
         print(itemList[i].name)
+        print(itemList[i].value)
