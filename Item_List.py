@@ -33,3 +33,20 @@ def itemListPrint(player):
             print(itemList[i].name)
             print(itemList[i].value)
 
+########## showcase for importing into main file
+
+
+# import Character_Object
+# from Item_List import itemListPrint
+
+# player = Character_Object.player
+# itemListPrint(player)
+
+
+## OR ##
+
+
+# from Character_Object import player
+# from Item_List import itemListPrint
+
+# itemListPrint(player)
