@@ -16,22 +16,24 @@ player = Character_Object.player
 enemy = Character_Object.enemy
 
 # set up coin flip
-coinFlip = Flip_Coin.flipCoin()
-if coinFlip == 1:
-    enemy.takeTurn = True
-else:
-    enemy.takeTurn = False
+def flipCoin(enemy):
+    coinFlip = Flip_Coin.flipCoin()
+    if coinFlip == 1:
+        enemy.takeTurn = True
+    else:
+        enemy.takeTurn = False
 
 #### DEF FUNC ####
 
-def healthDown(character, gun):
-    character.health -= gun.damage
+def healthDown(char, gun):
+    char.health -= gun.damage
 
 
 ################################ NO ITEMS ################################
 
 ### Maybe have a mechanic where the play chooses how hard to spin the cylinder ###
 
+flipCoin(enemy)
 ## round 1 Continue
 r1C = 0
 
@@ -83,19 +85,20 @@ while r1C != 1:
         if player.target == "me":
             
             if gun.activeChamber == 1:
+                
                 fire(gun)
                 
                 r1C = 1
                 
+                # if have trouble later not continue to next round look here
                 exit()
                 
             else:
                 
-                time.sleep(0.5)
-                
+
                 fire(gun)
                 print("It was an empty chamber")
-                time.sleep(0.5)
+                time.sleep(1)
                 
                 break
 
