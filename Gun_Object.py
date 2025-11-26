@@ -40,4 +40,4 @@ def gunInfo(gun):
 def revPrint(gun):
     print()
     print(f"REVOLUTION {gun.revolution}")
-    time.sleep(2)
+    time.sleep(1.5)
