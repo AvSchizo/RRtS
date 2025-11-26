@@ -5,7 +5,7 @@ import Flip_Coin
 import Gun_Object
 from Gun_Object import revolve, fire, revPrint, gunInfo
 import Character_Object
-import Start_Screen
+from Start_Screen import startScreen
 
 #### SET UP OBJECTS ####
 
@@ -29,6 +29,10 @@ def flipCoin(enemy):
 def healthDown(char, gun):
     char.health -= gun.damage
 
+
+
+################## START SCREEN ##################
+startScreen()
 
 ################################ NO ITEMS ################################
 
