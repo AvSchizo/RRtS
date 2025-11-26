@@ -83,11 +83,11 @@ while r1C != 1:
     ## PLAYER TURN ##
 
     while True:
-        player.target = input("Shoot yourself or him?\nme\nhim\nanswer: ")
+        player.target = input("Shoot yourself or him?\n1]me\n2]him\nanswer: ")
         print()
 
 
-        if player.target == "me":
+        if player.target == "me" or player.target == 1:
             
             if gun.activeChamber == 1:
                 
@@ -108,7 +108,7 @@ while r1C != 1:
                 break
 
 
-        elif player.target == "him":
+        elif player.target == "him" or player.target == 2:
             
             
             if gun.activeChamber == 1:
