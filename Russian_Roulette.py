@@ -87,7 +87,7 @@ while r1C != 1:
         print()
 
 
-        if player.target == "me" or player.target == 1:
+        if player.target == "me" or player.target == "1":
             
             if gun.activeChamber == "1":
                 
