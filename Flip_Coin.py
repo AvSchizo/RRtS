@@ -5,9 +5,9 @@ def flipCoin():
     coinFlipV = random.randint(0,1)
 
     while True:
-        coinFlipWord = input("A coin is flipped\nheads\ntails\nanswer: ")
+        coinFlipWord = input("A coin is flipped\n1]heads\n2]tails\nanswer: ")
 
-        if coinFlipWord == "heads" or coinFlipWord == "tails":
+        if coinFlipWord == "heads" or coinFlipWord == "tails" or coinFlipWord == 1 or coinFlipWord == 2:
             break
 
         print()

@@ -139,6 +139,8 @@ while r1C != 1:
                         
                         # if have trouble later not continue to next round look here
                         exit()
+        else:
+            print("Sorry, I don't understand")
 
 
 
