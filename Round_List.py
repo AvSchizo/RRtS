@@ -10,4 +10,3 @@ round3 = round()
 roundList = [round1, round2, round3]
 
 round1.maxHealth = 2
-print(round1.maxHealth)
