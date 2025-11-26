@@ -89,7 +89,7 @@ while r1C != 1:
 
         if player.target == "me" or player.target == 1:
             
-            if gun.activeChamber == 1:
+            if gun.activeChamber == "1":
                 
                 fire(gun)
                 
@@ -108,7 +108,7 @@ while r1C != 1:
                 break
 
 
-        elif player.target == "him" or player.target == 2:
+        elif player.target == "him" or player.target == "2":
             
             
             if gun.activeChamber == 1:
