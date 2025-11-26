@@ -5,6 +5,7 @@ import Flip_Coin
 import Gun_Object
 from Gun_Object import revolve, fire, revPrint, gunInfo
 import Character_Object
+import Start_Screen
 
 #### SET UP OBJECTS ####
 
