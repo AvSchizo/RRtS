@@ -6,7 +6,6 @@ def startScreen():
         elif userStartOption == "start" or userStartOption == "1":
             print()
             print("Oh, that's-a baseball")
-            print()
             break
         elif userStartOption == "cheats" or userStartOption == "3":
             print()
