@@ -148,7 +148,6 @@ while currentRound.cont != True:
                 fire(gun)
                 healthDown(enemy, gun)
                 print("It's a live round")
-                printHealth(enemy)
                 
                 ## ENEMY DIES ##
                 if enemy.health == 0:
