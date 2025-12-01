@@ -52,3 +52,5 @@ playTutorial = startScreen()
 
 if playTutorial == True:
     import RR_Tutorial
+
+print("running bacck on russianroulette.py")

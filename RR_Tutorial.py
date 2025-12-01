@@ -64,21 +64,18 @@ while currentRound.cont != True:
         time.sleep(1)
         
         print("He shoots at himself")
-        time.sleep(1)
+        time.sleep(2)
 
-        ## BULLET ##
         if gun.activeChamber == 1:
             
             fire(gun)
             healthDown(enemy, gun)
-            printHealth(enemy)
-
+            print("It's a live round")
+            
+            ## ENEMY DIES ##
             if enemy.health == 0:
                 currentRound.cont = True
-                print("he dead")
             
-            print("It was a live round")
-            break
 
 
         ## EMPTY CHAMBER ##
@@ -127,6 +124,8 @@ while currentRound.cont != True:
                 if player.health == 0:
                     currentRound.cont = True
                     exit()
+            
+                
                 
 
             ## EMPTY CHAMBER ##                
@@ -135,8 +134,9 @@ while currentRound.cont != True:
                 fire(gun)
                 print("It was an empty chamber")
                 time.sleep(1)
-                
-                break
+            
+            # player turn loop break
+            break
 
 
         ##### PLAYER TARGET "HIM" #####
@@ -153,7 +153,7 @@ while currentRound.cont != True:
                 if enemy.health == 0:
                     currentRound.cont = True
                 
-                break
+                
 
             ## EMPTY CHAMBER ##
             else:
@@ -162,7 +162,9 @@ while currentRound.cont != True:
                 print("It was an empty chamber")
                 time.sleep(1)
                 
-                break
+            # player turn loop break
+            break
+        
                         
         else:
             print("Sorry, I don't understand")

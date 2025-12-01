@@ -1,12 +1,13 @@
 def startScreen():
+    cheatsEnabledCheck = " "
+    playTutorialCheck = " "
     playTutorial = False
-    playTutorialCheck = "[ ]"
     while True:
         print("Russian Roulette The Sequal")
         print("1] start")
         print("2] exit")
-        print("3] cheats")
-        print(f"4] play tutorial {playTutorialCheck}")
+        print(f"3] cheats [{cheatsEnabledCheck}]")
+        print(f"4] play tutorial [{playTutorialCheck}]")
         userStartOption = input("answer: ")
         print()
         if userStartOption == "exit" or userStartOption == "2":
@@ -21,12 +22,12 @@ def startScreen():
 
             if playTutorial == False:
                 playTutorial = True
-                playTutorialCheck = "[+]"
+                playTutorialCheck = "+"
                 print("tutorial will play")
 
             elif playTutorial == True:
                 playTutorial = False
-                playTutorialCheck = "[ ]"
+                playTutorialCheck = " "
                 print("tutorial won't play")
 
             print()
