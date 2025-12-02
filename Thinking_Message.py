@@ -11,8 +11,7 @@ def spellMessage(message):
     return ""
 
 print("thinking")
+print(f"{spellMessage(". . .")}", end="")
 time.sleep(0.5)
-print(f"{spellMessage(message)}", end="")
 print("\r              ", end="\r")
-time.sleep(0.5)
-print(f"{spellMessage(message)}", end="")
+print(f"{spellMessage(". . .")}")

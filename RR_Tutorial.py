@@ -41,6 +41,11 @@ def setCharHealth(char1, char2, round):
     char1.health = round.maxHealth
     char2.health = round.maxHealth
 
+def sorryMes():
+    print()
+    print("Sorry, I don't understand,")
+    print()
+
 ##########################################################
 ##########################################################
 
@@ -52,19 +57,22 @@ setCharHealth(player, enemy, currentRound)
 
 print()
 print(f"ROUND {(i + 1)}")
+time.sleep(3)
 
 while currentRound.cont != True:
     
     revolve(gun)
 
-    ## ENEMY TURN ##
+    ######### ENEMY TURN #########
+    ##############################
+
     if enemy.takeTurn == True:
 
         displayInfo(player, enemy, gun)
-        time.sleep(1)
+        time.sleep(3)
         
         print("He shoots at himself")
-        time.sleep(2)
+        time.sleep(1.5)
 
         if gun.activeChamber == 1:
             
@@ -83,10 +91,10 @@ while currentRound.cont != True:
             
             fire(gun)
             print("It was an empty chamber")
-            time.sleep(1)
             
-            revolve(gun)
-    
+        revolve(gun)
+        time.sleep(1.5)
+
     # skipped enemy turn always if not set to 1
     else:
         enemy.takeTurn = True
@@ -99,6 +107,7 @@ while currentRound.cont != True:
 
     ### DISPLAY INFO ###
     displayInfo(player, enemy, gun)
+    time.sleep(3)
 
 
     while True:
@@ -118,11 +127,11 @@ while currentRound.cont != True:
                 
                 fire(gun)
                 healthDown(player, gun)
-                printHealth(player)
                 
                 ## PLAYER DIES ##
                 if player.health == 0:
                     currentRound.cont = True
+                    print("player death, exit now")
                     exit()
             
                 
@@ -133,7 +142,7 @@ while currentRound.cont != True:
                 
                 fire(gun)
                 print("It was an empty chamber")
-                time.sleep(1)
+                time.sleep(1.5)
 
                 # player choice to skip enemy turn
                 while True:
@@ -150,9 +159,7 @@ while currentRound.cont != True:
                     elif hisTurnAgain == "2" or hisTurnAgain == "no":
                         pass
                     else:
-                        print()
-                        print("sorry, I don't understand,")
-                        print()
+                        sorryMes()
             
             # player turn loop break
             break
@@ -186,7 +193,7 @@ while currentRound.cont != True:
         
                         
         else:
-            print("Sorry, I don't understand")
+            sorryMes()
 
 
 ##########################################################
