@@ -1,8 +1,6 @@
 import time
 import sys
 
-message = ". . ."
-
 def spellMessage(message):
     for char in message:
         sys.stdout.write(char)

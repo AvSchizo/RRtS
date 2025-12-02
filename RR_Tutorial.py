@@ -4,7 +4,7 @@ import time
 import Flip_Coin
 
 import Gun_Object
-from Gun_Object import revolve, fire, revPrint, gunInfo, reload, checkReload
+from Gun_Object import revolve, fire, revPrint, gunInfo, reloadGun, checkReload
 
 import Character_Object
 from Character_Object import printHealth
@@ -63,28 +63,35 @@ time.sleep(3)
 
 while currentRound.cont != True:
     
+    # this revolve acts as the revolve for player turn
     revolve(gun)
 
     ######### ENEMY TURN #########
     ##############################
+    charTurn = "ENEMY"
+    
 
     if enemy.takeTurn == True:
 
-        displayInfo(player, enemy, gun)
+        print()
+        print()
+        displayInfo(player, enemy, gun, charTurn)
         time.sleep(3)
         
         print("He shoots at himself")
-        time.sleep(1.5)
+        time.sleep(1)
 
         if gun.activeChamber == 1:
             
             fire(gun)
+            time.sleep(0.5)
             healthDown(enemy, gun)
             print("It's a live round")
             
             ## ENEMY DIES ##
             if enemy.health == 0:
                 currentRound.cont = True
+                continue
             
 
 
@@ -92,23 +99,27 @@ while currentRound.cont != True:
         else:
             
             fire(gun)
+            time.sleep(0.5)
             print("It was an empty chamber")
             
         revolve(gun)
-        time.sleep(1.5)
+        time.sleep(1)
 
     # skipped enemy turn always if not set to 1
     else:
         enemy.takeTurn = True
 
-    
+    checkReload(gun, True)
 
     ######### PLAYER TURN #########
     ###############################
-
+    charTurn = "PLAYER"
+    
 
     ### DISPLAY INFO ###
-    displayInfo(player, enemy, gun)
+    print()
+    print()
+    displayInfo(player, enemy, gun, charTurn)
     time.sleep(3)
 
 
@@ -128,6 +139,7 @@ while currentRound.cont != True:
             if gun.activeChamber == 1:
                 
                 fire(gun)
+                time.sleep(0.5)
                 healthDown(player, gun)
                 
                 ## PLAYER DIES ##
@@ -143,25 +155,32 @@ while currentRound.cont != True:
             else:
                 
                 fire(gun)
+                time.sleep(0.5)
                 print("It was an empty chamber")
-                time.sleep(1.5)
+                time.sleep(1)
 
                 # player choice to skip enemy turn
                 while True:
                     
+                    print()
                     print("would you like to skip the enemy's turn?")
                     print("1] yes")
                     print("2] no")
                     hisTurnAgain = input("answer: ")
 
                     if hisTurnAgain == "1" or hisTurnAgain == "yes":
+                        print()
                         enemy.takeTurn = False
                         # skip enemy turn question break
                         break
                     elif hisTurnAgain == "2" or hisTurnAgain == "no":
-                        pass
+                        print()
+                        # skip enemy turn question break
+                        break
                     else:
                         sorryMes()
+            
+            checkReload(gun)
             
             # player turn loop break
             break
@@ -174,6 +193,7 @@ while currentRound.cont != True:
             if gun.activeChamber == 1:
                 
                 fire(gun)
+                time.sleep(0.5)
                 healthDown(enemy, gun)
                 print("It's a live round")
                 
@@ -181,6 +201,7 @@ while currentRound.cont != True:
                 if enemy.health == 0:
                     currentRound.cont = True
                 
+
                 
 
             ## EMPTY CHAMBER ##
@@ -188,7 +209,8 @@ while currentRound.cont != True:
                 
                 fire(gun)
                 print("It was an empty chamber")
-                time.sleep(1)
+            
+            time.sleep(1)
                 
             # player turn loop break
             break
@@ -196,6 +218,8 @@ while currentRound.cont != True:
                         
         else:
             sorryMes()
+    
+    checkReload(gun, False)
 
 
 ##########################################################
