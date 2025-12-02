@@ -9,8 +9,11 @@ gun = Gun_Object.gun
 from Item_List import itemListPrint
 
 
-def displayInfo(player, enemy, gun):
+def displayInfo(player, enemy, gun, char):
     Gun_Object.revPrint(gun)
+    print()
+    print(f"{char} TURN")
+    print()
     printHealth(player)
     printHealth(enemy)
     print()

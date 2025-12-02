@@ -38,22 +38,23 @@ def gunInfo(gun):
 
 
 def revPrint(gun):
-    print()
     print(f"REVOLUTION {gun.revolution}")
     time.sleep(1.5)
 
 
-def reload(gun, bool):
+def reloadGun(gun, bool1, bool2):
     ind = random.randint(1,(len(gun.cyl)))
     gun.bulletChamber = ind % (len(gun.cyl))
     gun.cyl[gun.bulletChamber] = 1
     gun.activeChamber = gun.cyl[0]
 
-    resetRev = bool
-    if resetRev == True:
+    if bool1 == True:
         gun.revolution = 0
     
+    if bool2 == True:
+        revolve(gun)
+    
 
-def checkReload(gun):
-    if gun.revolution > len(gun.cyl):
-        reload(gun)
+def checkReload(gun, bool2):
+    if gun.revolution >= len(gun.cyl):
+        reloadGun(gun, True, bool2)

@@ -4,7 +4,7 @@ import time
 import Flip_Coin
 
 import Gun_Object
-from Gun_Object import revolve, fire, revPrint, gunInfo
+from Gun_Object import revolve, fire, revPrint, gunInfo, reloadGun, checkReload
 
 import Character_Object
 from Character_Object import printHealth
@@ -53,4 +53,4 @@ playTutorial = startScreen()
 if playTutorial == True:
     import RR_Tutorial
 
-print("running bacck on russianroulette.py")
+print("running back on russianroulette.py")
