@@ -4,7 +4,7 @@ import time
 import Flip_Coin
 
 import Gun_Object
-from Gun_Object import revolve, fire, revPrint, gunInfo
+from Gun_Object import revolve, fire, revPrint, gunInfo, reload, checkReload
 
 import Character_Object
 from Character_Object import printHealth
@@ -45,6 +45,8 @@ def sorryMes():
     print()
     print("Sorry, I don't understand,")
     print()
+
+
 
 ##########################################################
 ##########################################################

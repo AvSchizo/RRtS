@@ -10,9 +10,15 @@ def flipCoin():
 
         if coinFlipWord == "heads" or coinFlipWord == "tails" or coinFlipWord == "1" or coinFlipWord == "2":
             if coinFlipWord == "heads" or coinFlipWord == "1":
-                print("it's heads")
+                if coinFlipV == 1:
+                    print("it's tails")
+                else:
+                    print("it's heads")
             elif coinFlipWord == "tails" or coinFlipWord == "2":
-                print("it's tails")
+                if coinFlipV == 1:
+                    print("it's heads")
+                else:
+                    print("it's tails")
             break
 
         print()

@@ -42,6 +42,7 @@ def revPrint(gun):
     print(f"REVOLUTION {gun.revolution}")
     time.sleep(1.5)
 
+
 def reload(gun, bool):
     ind = random.randint(1,(len(gun.cyl)))
     gun.bulletChamber = ind % (len(gun.cyl))
@@ -52,3 +53,7 @@ def reload(gun, bool):
     if resetRev == True:
         gun.revolution = 0
     
+
+def checkReload(gun):
+    if gun.revolution > len(gun.cyl):
+        reload(gun)
