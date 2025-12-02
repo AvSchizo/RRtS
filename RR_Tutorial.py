@@ -134,6 +134,25 @@ while currentRound.cont != True:
                 fire(gun)
                 print("It was an empty chamber")
                 time.sleep(1)
+
+                # player choice to skip enemy turn
+                while True:
+                    
+                    print("would you like to skip the enemy's turn?")
+                    print("1] yes")
+                    print("2] no")
+                    hisTurnAgain = input("answer: ")
+
+                    if hisTurnAgain == "1" or hisTurnAgain == "yes":
+                        enemy.takeTurn = False
+                        # skip enemy turn question break
+                        break
+                    elif hisTurnAgain == "2" or hisTurnAgain == "no":
+                        pass
+                    else:
+                        print()
+                        print("sorry, I don't understand,")
+                        print()
             
             # player turn loop break
             break
