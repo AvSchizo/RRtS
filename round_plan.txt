@@ -23,5 +23,11 @@ action_breathe:
     skips your turn and FORCES enemy.target to be you, then increases your health but, doubles your damage taken for one turn 
     [might be able to sync with possible future reflect damage item or something]
 
+action_bangGun:
+    if there's not bullet in the chamber, you add one, if there is, it fires at you
+
+item_gunpowder:
+    adds 1 damage to the gun but skips two turns if you shoot yourself with an empty chamber
+
 
 

@@ -4,6 +4,7 @@ class roundClass:
     useItems = False
     cont = False
     maxHealth = 2
+    gunDmg = 1
 
 round1 = roundClass()
 round2 = roundClass()

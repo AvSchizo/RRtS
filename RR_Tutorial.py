@@ -30,7 +30,7 @@ def flipCoin(enemy):
     if coinFlip == 1:
         enemy.takeTurn = True
     else:
-        enemy.takeTurn = False
+        enemy.takeTurn = True
 
 #### DEF FUNC ####
 
@@ -59,7 +59,7 @@ setCharHealth(player, enemy, currentRound)
 
 print()
 print(f"ROUND {(i + 1)}")
-time.sleep(3)
+time.sleep(2)
 
 while currentRound.cont != True:
     
@@ -76,8 +76,7 @@ while currentRound.cont != True:
         print()
         print()
         displayInfo(player, enemy, gun, charTurn)
-        time.sleep(3)
-        
+
         print("He shoots at himself")
         time.sleep(1)
 
@@ -120,7 +119,7 @@ while currentRound.cont != True:
     print()
     print()
     displayInfo(player, enemy, gun, charTurn)
-    time.sleep(3)
+    time.sleep(2)
 
 
     while True:

@@ -58,3 +58,5 @@ def reloadGun(gun, bool1, bool2):
 def checkReload(gun, bool2):
     if gun.revolution >= len(gun.cyl):
         reloadGun(gun, True, bool2)
+    
+
