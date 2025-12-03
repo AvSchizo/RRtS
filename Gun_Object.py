@@ -5,8 +5,10 @@ class gunClass:
     revolution = 0
     cyl = [0,0,0,0,0,0]
     damage = 1
+    reset = True
 
 gun = gunClass()
+gun.startCyl = gun.cyl
 
 ind = random.randint(1,(len(gun.cyl)))
 gun.bulletChamber = ind % (len(gun.cyl))
@@ -42,10 +44,18 @@ def revPrint(gun):
     time.sleep(1.5)
 
 
+def loadGun(gun):
+    ind = random.randint(1,(len(gun.cyl))) % (len(gun.cyl))
+    if gun.cyl[ind] == 0:
+        gun.cyl[ind] = 1
+
+# doesn't check for bullet already in the chamber
+def altLoadGun(gun):
+    gun.cyl[random.randint(1,(len(gun.cyl))) % (len(gun.cyl))] = 1
+    
 def reloadGun(gun, bool1, bool2):
-    ind = random.randint(1,(len(gun.cyl)))
-    gun.bulletChamber = ind % (len(gun.cyl))
-    gun.cyl[gun.bulletChamber] = 1
+    gun.cyl = gun.startCyl
+    loadGun(gun)
     gun.activeChamber = gun.cyl[0]
 
     if bool1 == True:

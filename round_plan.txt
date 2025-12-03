@@ -1,17 +1,19 @@
 Round 1:
-    (tutorial)
     no items
+    no actions
     one bullet
-    one health
+    two health
 
 Round 2:
     no items
+    yes actions
     2 bullets
-    2 or 3 max health
-    show gun reload
+    4 max health
+    increase in enemy AI
 
 Round 3:
     items
+    actions
     stun mechanic (if character gets shot within first 2 revolutions they get stunned and get their turn skipped)
     upgrade in enemy AI
 

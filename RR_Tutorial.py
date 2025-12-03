@@ -147,7 +147,7 @@ while currentRound.cont != True:
                     print("player death, exit now")
                     exit()
             
-                
+            
                 
 
             ## EMPTY CHAMBER ##                

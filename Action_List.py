@@ -13,7 +13,7 @@ AV_bangGun = actionClass()
 def bangGun(AV_bangGun, gun, player):
     gun.reset = True
     gun.damage *= 2
-    AV_bangGun = 0
+    AV_bangGun = False
     
     if gun.cyl[0] == 1:
         player.health -= gun.damage
