@@ -30,7 +30,7 @@ def flipCoin(enemy):
     if coinFlip == 1:
         enemy.takeTurn = True
     else:
-        enemy.takeTurn = True
+        enemy.takeTurn = False
 
 #### DEF FUNC ####
 
@@ -220,4 +220,5 @@ while currentRound.cont != True:
 
 
 ##########################################################
+
 ##########################################################
