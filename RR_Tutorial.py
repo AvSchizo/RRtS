@@ -168,18 +168,16 @@ while currentRound.cont != True:
                     hisTurnAgain = input("answer: ")
 
                     if hisTurnAgain == "1" or hisTurnAgain == "yes":
-                        print()
                         enemy.takeTurn = False
                         # skip enemy turn question break
                         break
                     elif hisTurnAgain == "2" or hisTurnAgain == "no":
-                        print()
                         # skip enemy turn question break
                         break
                     else:
                         sorryMes()
             
-            checkReload(gun)
+            checkReload(gun, True)
             
             # player turn loop break
             break
@@ -217,7 +215,7 @@ while currentRound.cont != True:
                         
         else:
             sorryMes()
-    
+
     checkReload(gun, False)
 
 
