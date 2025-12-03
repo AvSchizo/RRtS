@@ -1,37 +1,57 @@
-import Character_Object
+import random
 
+import Character_Object
 player = Character_Object.player
 
+import Gun_Object
+gun = Gun_Object.gun
+
+
 class itemClass():
-    pass
+    value = 0
 
-item1 = itemClass()
-item1.name = "coffee"
-item1.value = 0
+coffee = itemClass()
+coffee.name = "Coffee"
+coffee.value = 0
 
-item2 = itemClass()
-item2.name = "chocolate"
-item2.value = 0
+gunpowder = itemClass()
+gunpowder.name = "Gunpowder"
+gunpowder.value = 0
 
 item3 = itemClass()
-item3.name = "trash"
+item3.name = "item3"
 item3.value = 0
 
 
 # i dunno why but you gotta set them equal to the original items
-player.item1 = item1
-player.item2 = item2
+player.coffee = coffee
+player.gunpowder = gunpowder
 player.item3 = item3
 
 
-player.item1.value = 1
-
 def itemListPrint(player):
-    itemList = [player.item1, player.item2, player.item3]
+    itemList = [player.coffee, player.gunpowder, player.item3]
     for i in range(len(itemList)):
         if itemList[i].value > 0:
             print(itemList[i].name)
             print(itemList[i].value)
+
+
+def useCoffee(player, gun):
+    if player.coffee.value > 0:
+        player.coffee.value -= 1
+        ind = random.randint(len(gun.cyl), 30)
+        gun.cyl = gun.cyl[ind:] + gun.cyl[:ind]
+    elif player.coffee.value <= 0:
+        print("nuh uh, no more coffee")
+
+
+
+
+
+
+
+
 
 ########## showcase for importing into main file
 
