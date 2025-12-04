@@ -1,13 +1,19 @@
+import time
 def startScreen():
     cheatsEnabledCheck = " "
     playTutorialCheck = " "
     playTutorial = False
     while True:
         print("Russian Roulette The Sequal")
+        time.sleep(0.2)
         print("1] start")
+        time.sleep(0.2)
         print("2] exit")
+        time.sleep(0.2)
         print(f"3] cheats [{cheatsEnabledCheck}]")
+        time.sleep(0.2)
         print(f"4] play tutorial [{playTutorialCheck}]")
+        time.sleep(0.2)
         userStartOption = input("answer: ")
         print()
         if userStartOption == "exit" or userStartOption == "2":
