@@ -10,7 +10,7 @@ gun = Gun_Object.gun
 from Item_List import itemListPrint
 
 
-def displayInfo(player, enemy, gun, char):
+def displayInfo(char):
     Gun_Object.revPrint(gun)
     time.sleep(1)
     print()

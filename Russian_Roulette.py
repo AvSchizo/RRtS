@@ -25,7 +25,7 @@ player = Character_Object.player
 enemy = Character_Object.enemy
 
 # set up coin flip
-def flipCoin(enemy):
+def flipCoin():
     coinFlip = Flip_Coin.flipCoin()
     if coinFlip == 1:
         enemy.takeTurn = True
@@ -34,7 +34,7 @@ def flipCoin(enemy):
 
 #### DEF FUNC ####
 
-def healthDown(char, gun):
+def healthDown(char):
     char.health -= gun.damage
 
 def setCharHealth(char1, char2, round):

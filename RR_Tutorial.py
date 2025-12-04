@@ -25,7 +25,7 @@ player = Character_Object.player
 enemy = Character_Object.enemy
 
 # set up coin flip
-def flipCoin(enemy):
+def flipCoin():
     coinFlip = Flip_Coin.flipCoin()
     if coinFlip == 1:
         enemy.takeTurn = True
@@ -34,7 +34,7 @@ def flipCoin(enemy):
 
 #### DEF FUNC ####
 
-def healthDown(char, gun):
+def healthDown(char):
     char.health -= gun.damage
 
 def setCharHealth(char1, char2, round):
@@ -52,13 +52,13 @@ def sorryMes():
 ##########################################################
 
 # Round setup
-flipCoin(enemy)
-i = Round_List.i
+flipCoin()
+i = Round_List.roundI
 currentRound = Round_List.roundList[i]
 setCharHealth(player, enemy, currentRound)
 
 print()
-print(f"ROUND {(i + 1)}")
+print(f"ROUND {(i+1)}")
 time.sleep(2)
 
 while currentRound.cont != True:
@@ -75,7 +75,7 @@ while currentRound.cont != True:
 
         print()
         print()
-        displayInfo(player, enemy, gun, charTurn)
+        displayInfo(charTurn)
 
         print("He shoots at himself")
         time.sleep(1)
@@ -84,7 +84,7 @@ while currentRound.cont != True:
             
             fire(gun)
             time.sleep(0.5)
-            healthDown(enemy, gun)
+            healthDown(enemy)
             print("It's a live round")
             
             ## ENEMY DIES ##
@@ -101,7 +101,6 @@ while currentRound.cont != True:
             time.sleep(0.5)
             print("It was an empty chamber")
             
-        revolve(gun)
         time.sleep(1)
 
     # skipped enemy turn always if not set to 1
@@ -109,6 +108,7 @@ while currentRound.cont != True:
         enemy.takeTurn = True
 
     checkReload(gun, True)
+    revolve(gun)
 
     ######### PLAYER TURN #########
     ###############################
@@ -118,8 +118,7 @@ while currentRound.cont != True:
     ### DISPLAY INFO ###
     print()
     print()
-    displayInfo(player, enemy, gun, charTurn)
-    time.sleep(2)
+    displayInfo(charTurn)
 
 
     while True:
@@ -128,6 +127,7 @@ while currentRound.cont != True:
         print("2] him")
         player.target = input("answer: ")
         print()
+
 
 
         ##### PLAYER TARGET "ME" #####
@@ -139,7 +139,7 @@ while currentRound.cont != True:
                 
                 fire(gun)
                 time.sleep(0.5)
-                healthDown(player, gun)
+                healthDown(player)
                 
                 ## PLAYER DIES ##
                 if player.health == 0:
@@ -183,6 +183,7 @@ while currentRound.cont != True:
             break
 
 
+
         ##### PLAYER TARGET "HIM" #####
         elif player.target == "him" or player.target == "2":
             
@@ -191,7 +192,7 @@ while currentRound.cont != True:
                 
                 fire(gun)
                 time.sleep(0.5)
-                healthDown(enemy, gun)
+                healthDown(enemy)
                 print("It's a live round")
                 
                 ## ENEMY DIES ##

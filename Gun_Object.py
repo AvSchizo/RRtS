@@ -1,5 +1,7 @@
 import random
 import time
+import Round_List
+from Round_List import roundList, roundI
 
 class gunClass:
     revolution = 0
@@ -52,8 +54,11 @@ def loadGun(gun):
 # doesn't check for bullet already in the chamber
 def altLoadGun(gun):
     gun.cyl[random.randint(1,(len(gun.cyl))) % (len(gun.cyl))] = 1
+
     
 def reloadGun(gun, bool1, bool2):
+    print()
+    print("RELOADED")
     gun.cyl = gun.startCyl
     loadGun(gun)
     gun.activeChamber = gun.cyl[0]
@@ -66,7 +71,12 @@ def reloadGun(gun, bool1, bool2):
     
 
 def checkReload(gun, bool2):
+    # either >= and have revolve after check, or > and have revolve before check
     if gun.revolution >= len(gun.cyl):
         reloadGun(gun, True, bool2)
-    
+
+
+def checkGunReset(gun):
+    if gun.reset == True:
+        gun.damage = 1
 

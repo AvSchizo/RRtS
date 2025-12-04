@@ -10,7 +10,7 @@ round1 = roundClass()
 round2 = roundClass()
 round3 = roundClass()
 
-i = 0
+roundI = 0
 roundList = [round1, round2, round3]
 
 round1.maxHealth = 2
