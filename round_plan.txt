@@ -7,7 +7,7 @@ Round 1:
 Round 2:
     no items
     yes actions
-    2 bullets
+    3 bullets
     4 max health
     increase in enemy AI
 
@@ -31,5 +31,5 @@ action_bangGun:
 item_gunpowder:
     adds 1 damage to the gun but skips two turns if you shoot yourself with an empty chamber
 
-
+maybe have a chance for "gun to break" and force the gun to reload. the idea is for it to somewhat solve the problem of it always having just the amount of chambers minus the amount bullets, now we got some chance.
 
