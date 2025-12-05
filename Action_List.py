@@ -36,5 +36,5 @@ def bangGun(actionContainer, gun, player):
         player.health -= gun.damage
 
 
-def breathe(player, enemy):
+def breathe(actionContainer, gun, player, enemy):
     player.health += 1
