@@ -4,12 +4,14 @@ gun = Gun_Object.gun
 
 import Character_Object
 player = Character_Object.player
+enemy = Character_Object.enemy
 
 class actionClass:
     usable = True
 
 # ActionVariable_bangGun
 AV_bangGun = actionClass()
+AV_breathe = actionClass()
 
 
 class actionContainerClass:
@@ -17,6 +19,7 @@ class actionContainerClass:
 
 actionContainer = actionContainerClass()
 actionContainer.AV_bangGun = AV_bangGun
+actionContainer.AV_breathe = AV_breathe
 
 def resetAction(actionContainer):
     actionContainer.AV_bangGun.usable = True
@@ -32,3 +35,6 @@ def bangGun(actionContainer, gun, player):
         fire(gun)
         player.health -= gun.damage
 
+
+def breathe(player, enemy):
+    player.health += 1
