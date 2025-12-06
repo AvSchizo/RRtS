@@ -12,13 +12,12 @@ from Item_List import itemListPrint
 
 def displayInfo(char):
     Gun_Object.revPrint(gun)
-    time.sleep(1)
     print()
     print(f"{char} TURN")
     time.sleep(1)
     print()
     printHealth(player)
-    time.sleep(1)
+    time.sleep(0.5)
     printHealth(enemy)
-    time.sleep(1)
+    time.sleep(0.5)
     print()

@@ -54,11 +54,13 @@ def sorryMes():
 
 # Round setup
 print()
+i = Round_List.roundI
 print(f"ROUND {(i+1)}")
 time.sleep(2)
 
+print()
+print()
 flipCoin()
-i = Round_List.roundI
 currentRound = Round_List.roundList[i]
 setCharHealth(player, enemy, currentRound)
 
@@ -108,7 +110,7 @@ while currentRound.cont != True:
     else:
         enemy.takeTurn = True
 
-    checkReload(gun, True)
+    checkReload(gun, False)
 
     ######### PLAYER TURN #########
     ###############################
@@ -152,6 +154,7 @@ while currentRound.cont != True:
             
             
                 
+    
 
             ## EMPTY CHAMBER ##                
             else:
@@ -180,7 +183,7 @@ while currentRound.cont != True:
                     else:
                         sorryMes()
             
-            checkReload(gun, True)
+            checkReload(gun, False)
             
             # player turn loop break
             break

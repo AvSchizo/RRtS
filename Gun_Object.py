@@ -59,6 +59,7 @@ def altLoadGun(gun):
 def reloadGun(gun, bool1, bool2):
     print()
     print("RELOADED")
+    time.sleep(1.5)
     gun.cyl = gun.startCyl
     loadGun(gun)
     gun.activeChamber = gun.cyl[0]

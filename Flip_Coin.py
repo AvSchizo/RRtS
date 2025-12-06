@@ -5,7 +5,6 @@ def flipCoin():
     coinFlipV = random.randint(0,1)
 
     while True:
-        print()
         coinFlipWord = input("A coin is flipped\n1] heads\n2] tails\nanswer: ")
 
         if coinFlipWord == "heads" or coinFlipWord == "tails" or coinFlipWord == "1" or coinFlipWord == "2":
