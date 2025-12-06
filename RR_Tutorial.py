@@ -48,23 +48,23 @@ def sorryMes():
 
 
 
-##########################################################
-##########################################################
+#########################################################
+######################## ROUND 1 ########################
+#########################################################
 
 # Round setup
+print()
+print(f"ROUND {(i+1)}")
+time.sleep(2)
+
 flipCoin()
 i = Round_List.roundI
 currentRound = Round_List.roundList[i]
 setCharHealth(player, enemy, currentRound)
 
-print()
-print(f"ROUND {(i+1)}")
-time.sleep(2)
 
 while currentRound.cont != True:
     
-    # this revolve acts as the revolve for player turn
-    revolve(gun)
 
     ######### ENEMY TURN #########
     ##############################
@@ -72,6 +72,7 @@ while currentRound.cont != True:
     
 
     if enemy.takeTurn == True:
+        revolve(gun)
 
         print()
         print()
@@ -108,11 +109,13 @@ while currentRound.cont != True:
         enemy.takeTurn = True
 
     checkReload(gun, True)
-    revolve(gun)
 
     ######### PLAYER TURN #########
     ###############################
+    # remember to put "if player.takeTurn == True:" and indent
+    
     charTurn = "PLAYER"
+    revolve(gun)
     
 
     ### DISPLAY INFO ###
@@ -220,6 +223,6 @@ while currentRound.cont != True:
     checkReload(gun, False)
 
 
-##########################################################
-
-##########################################################
+#########################################################
+######################## ROUND 2 ########################
+#########################################################

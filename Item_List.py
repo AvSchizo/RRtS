@@ -10,13 +10,13 @@ gun = Gun_Object.gun
 class itemClass():
     value = 0
 
-coffee = itemClass()
-coffee.name = "Coffee"
-coffee.value = 0
+Coffee = itemClass()
+Coffee.name = "Coffee"
+Coffee.value = 0
 
-gunpowder = itemClass()
-gunpowder.name = "Gunpowder"
-gunpowder.value = 0
+Gunpowder = itemClass()
+Gunpowder.name = "Gunpowder"
+Gunpowder.value = 0
 
 item3 = itemClass()
 item3.name = "item3"
@@ -24,13 +24,19 @@ item3.value = 0
 
 
 # i dunno why but you gotta set them equal to the original items
-player.coffee = coffee
-player.gunpowder = gunpowder
+player.Coffee = Coffee
+player.Gunpowder = Gunpowder
 player.item3 = item3
 
 
+tutorialItemGiveList = [Coffee, Gunpowder, item3]
+
+
+
+
+
 def itemListPrint(player):
-    itemList = [player.coffee, player.gunpowder, player.item3]
+    itemList = [player.Coffee, player.Gunpowder, player.item3]
     for i in range(len(itemList)):
         if itemList[i].value > 0:
             print(itemList[i].name)
@@ -38,12 +44,15 @@ def itemListPrint(player):
 
 
 def useCoffee(player, gun):
-    if player.coffee.value > 0:
-        player.coffee.value -= 1
+    # valid amount of item
+    if player.Coffee.value > 0:
+        player.Coffee.value -= 1
         ind = random.randint(len(gun.cyl), 30)
         gun.cyl = gun.cyl[ind:] + gun.cyl[:ind]
-    elif player.coffee.value <= 0:
-        print("nuh uh, no more coffee")
+    
+    # invalid amount of item
+    elif player.Coffee.value <= 0:
+        print("nuh uh, no more Coffee")
 
 
 

@@ -10,19 +10,19 @@ class actionClass:
     usable = True
 
 # ActionVariable_bangGun
-AV_bangGun = actionClass()
-AV_breathe = actionClass()
 
 
 class actionContainerClass:
     pass
 
 actionContainer = actionContainerClass()
-actionContainer.AV_bangGun = AV_bangGun
-actionContainer.AV_breathe = AV_breathe
+actionContainer.AV_bangGun = actionClass()
+actionContainer.AV_breathe = actionClass()
 
 def resetAction(actionContainer):
     actionContainer.AV_bangGun.usable = True
+    actionContainer.AV_breathe.usable = True
+    
 
 
 
@@ -38,3 +38,4 @@ def bangGun(actionContainer, gun, player):
 
 def breathe(actionContainer, gun, player, enemy):
     player.health += 1
+

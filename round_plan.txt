@@ -33,3 +33,5 @@ item_gunpowder:
 
 maybe have a chance for "gun to break" and force the gun to reload. the idea is for it to somewhat solve the problem of it always having just the amount of chambers minus the amount bullets, now we got some chance.
 
+item_coin:
+    select a character and there's a fifty fifty chance the character either loses their turn or is ensured to have their turn
