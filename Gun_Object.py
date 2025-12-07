@@ -17,6 +17,8 @@ gun.bulletChamber = ind % (len(gun.cyl))
 gun.cyl[gun.bulletChamber] = 1
 gun.activeChamber = gun.cyl[0]
 
+
+
 def revolve(gun):
     gun.cyl = gun.cyl[1:] + gun.cyl[:1]
     if gun.bulletChamber == 0:
@@ -77,6 +79,7 @@ def checkReload(gun, bool2):
         reloadGun(gun, True, bool2)
 
 
+# gun reset function
 def checkGunReset(gun):
     if gun.reset == True:
         gun.damage = 1

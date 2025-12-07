@@ -7,35 +7,37 @@ player = Character_Object.player
 enemy = Character_Object.enemy
 
 class actionClass:
-    usable = True
+	usable = True
 
 # ActionVariable_bangGun
 
 
 class actionContainerClass:
-    pass
+	pass
 
 actionContainer = actionContainerClass()
 actionContainer.AV_bangGun = actionClass()
 actionContainer.AV_breathe = actionClass()
 
 def resetAction(actionContainer):
-    actionContainer.AV_bangGun.usable = True
-    actionContainer.AV_breathe.usable = True
-    
+	actionContainer.AV_bangGun.usable = True
+	actionContainer.AV_breathe.usable = True
 
 
 
 def bangGun(actionContainer, gun, player):
-    gun.reset = True
-    gun.damage *= 2
-    actionContainer.AV_bangGun.usable = False
-    
-    if gun.cyl[0] == 1:
-        fire(gun)
-        player.health -= gun.damage
+	gun.reset = True
+	gun.damage *= 2
+	actionContainer.AV_bangGun.usable = False
+
+	if gun.cyl[0] == 1:
+		fire(gun)
+		player.health -= gun.damage
 
 
 def breathe(actionContainer, gun, player, enemy):
-    player.health += 1
+	actionContainer.AV_breathe.usable = False
+	player.health += 1
+	gun.damage += 1
+	enemy.forceTarget = player
 

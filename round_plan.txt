@@ -1,37 +1,47 @@
 Round 1:
-    no items
-    no actions
-    one bullet
-    two health
+	no items
+	no actions
+	one bullet
+	two health
 
 Round 2:
-    no items
-    yes actions
-    3 bullets
-    4 max health
-    increase in enemy AI
+	just showcase action
 
 Round 3:
-    items
-    actions
-    stun mechanic (if character gets shot within first 2 revolutions they get stunned and get their turn skipped)
-    upgrade in enemy AI
+	just showcase items
+
+round 4:
+	maybe 1 round of complete round cycle
 
 
 item_coffee:
-    completely re-spin the cylinder
+	completely re-spin the cylinder
 
 action_breathe:
-    skips your turn and FORCES enemy.target to be you, then increases your health but, doubles your damage taken for one turn 
-    [might be able to sync with possible future reflect damage item or something]
+	ends your turn and FORCES enemy.target to be you, then increases your health by 1, makes gun.damage += 1 for one turn
+	[might be able to sync with possible future reflect damage item or something]
 
 action_bangGun:
-    if there's not bullet in the chamber, you add one, if there is, it fires at you
+	if there's not bullet in the chamber, doubles damage, if there is, it fires at you
 
 item_gunpowder:
-    adds 1 damage to the gun but skips two turns if you shoot yourself with an empty chamber
+	adds 1 damage to the gun but skips two turns if you shoot yourself with an empty chamber
+
+for item_gunpowder:
+	to have the enemy turn skip twice, have:
+	1. enemy.takeTurn = True
+	2. if gunpowderSkipCount <2:
+		enemy.takeTurn = False
+	3a. if gunpowderSkipCount <2:
+		gunpowderSkipCount += 1
+	3b. gunpowderSkipCount += 1
+	you set gunpowderSkipCount to 0 when you use gunpowder and there's no bullet
+	you choose either 3a or 3b, 3b will keep the counter going, which I don't think there's wrong with but you never know
 
 maybe have a chance for "gun to break" and force the gun to reload. the idea is for it to somewhat solve the problem of it always having just the amount of chambers minus the amount bullets, now we got some chance.
 
 item_coin:
-    select a character and there's a fifty fifty chance the character either loses their turn or is ensured to have their turn
+	select a character and there's a fifty fifty chance the character either loses their turn or is ensured to have their turn
+
+action_forceReload:
+	if no bullet in chamber, add a bullet, if there is, fire at last player target chosen
