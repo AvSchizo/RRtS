@@ -26,7 +26,6 @@ def resetAction(actionContainer):
 
 
 def bangGun(actionContainer, gun, player):
-	gun.reset = True
 	gun.damage *= 2
 	actionContainer.AV_bangGun.usable = False
 

@@ -8,6 +8,8 @@ class gunClass:
     cyl = [0,0,0,0,0,0]
     damage = 1
     reset = True
+    # no plans yet, use if want to make damage not reset after a turn
+    forceReset = None
 
 gun = gunClass()
 gun.startCyl = gun.cyl
@@ -81,6 +83,8 @@ def checkReload(gun, bool2):
 
 # gun reset function
 def checkGunReset(gun):
+    if gun.damage != roundList[roundI].gunDmg:
+        gun.reset == True
     if gun.reset == True:
         gun.damage = 1
 
