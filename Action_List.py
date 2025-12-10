@@ -48,5 +48,6 @@ def forceLoad(actionContainer, gun, player):
 		gun.cyl[0] = 1
 	elif gun.cyl[0] == 1:
 		player.target.health -= gun.damage
+		player.endTurn = True
 
 

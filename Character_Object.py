@@ -4,6 +4,9 @@ class character:
     target = None
     forceTakeTurn = None
     forceTarget = None
+    endTurn = False
+    choiceInput = None
+    actionInput = None
 
 player = character()
 player.name = "player"
