@@ -22,6 +22,7 @@ actionContainer.AV_breathe = actionClass()
 def resetAction(actionContainer):
 	actionContainer.AV_bangGun.usable = True
 	actionContainer.AV_breathe.usable = True
+	actionContainer.AV_forceLoad.usable = True
 
 
 
@@ -39,4 +40,13 @@ def breathe(actionContainer, gun, player, enemy):
 	player.health += 1
 	gun.damage += 1
 	enemy.forceTarget = player
+
+
+def forceLoad(actionContainer, gun, player):
+	actionContainer.AV_forceLoad.usable = False
+	if gun.cyl[0] == 0:
+		gun.cyl[0] = 1
+	elif gun.cyl[0] == 1:
+		player.target.health -= gun.damage
+
 

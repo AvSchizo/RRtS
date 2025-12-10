@@ -1,4 +1,15 @@
-if input("choiec: ") == "1":
-    print("choice 1")
-elif input("choice: ") == "2":
-    print("choice 2")
+class skibidiClass:
+	value = 1
+
+
+
+
+skibidi = skibidiClass()
+
+toilet = skibidiClass()
+
+toilet.target = skibidi
+toilet.target.value += 1
+
+
+print(toilet.target.value)

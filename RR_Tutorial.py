@@ -130,13 +130,14 @@ while currentRound.cont != True:
         print("Shoot yourself or him?")
         print("1] me")
         print("2] him")
-        player.target = input("answer: ")
+        player.targetInput = input("answer: ")
         print()
 
 
 
         ##### PLAYER TARGET "ME" #####
-        if player.target == "me" or player.target == "1":
+        if player.targetInput == "me" or player.target == "1":
+            player.target = player
             
 
             ## BULLET ##
@@ -191,7 +192,9 @@ while currentRound.cont != True:
 
 
         ##### PLAYER TARGET "HIM" #####
-        elif player.target == "him" or player.target == "2":
+        elif player.targetInput == "him" or player.target == "2":
+            player.target = enemy
+            
             
             ## BULLET ##
             if gun.activeChamber == 1:

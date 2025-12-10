@@ -43,5 +43,8 @@ maybe have a chance for "gun to break" and force the gun to reload. the idea is 
 item_coin:
 	select a character and there's a fifty fifty chance the character either loses their turn or is ensured to have their turn
 
-action_forceReload:
+action_forceLoad:
 	if no bullet in chamber, add a bullet, if there is, fire at last player target chosen
+
+action_shiver:
+	lose two of your turns, makes enemy.target=enemy on the first lost turn, 

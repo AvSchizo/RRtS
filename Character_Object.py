@@ -1,6 +1,7 @@
 class character:
     health = 1
     takeTurn = True
+    target = None
     forceTakeTurn = None
     forceTarget = None
 
