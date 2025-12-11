@@ -18,6 +18,7 @@ enemy.name = "enemy"
 def resetChar(char):
     char.forceTakeTurn = None
     char.forceTarget = None
+    char.endTurn = False
 
 
 def printHealth(char):

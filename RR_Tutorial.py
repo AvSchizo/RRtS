@@ -138,7 +138,7 @@ while currentRound.cont != True:
 
 
 		##### PLAYER TARGET "ME" #####
-		if player.targetInput == "me" or player.target == "1":
+		if player.targetInput == "me" or player.targetInput == "1":
 			player.target = player
 			
 
@@ -194,7 +194,7 @@ while currentRound.cont != True:
 
 
 		##### PLAYER TARGET "HIM" #####
-		elif player.targetInput == "him" or player.target == "2":
+		elif player.targetInput == "him" or player.targetInput == "2":
 			player.target = enemy
 			
 			
@@ -235,7 +235,11 @@ while currentRound.cont != True:
 ######################## ACTIONS ########################
 #########################################################
 
+print()
+
 while True:
+
+	displayInfo(player)
 
 	print("Options")
 	print("1] action")
@@ -250,10 +254,13 @@ while True:
 		player.actionInput = input("answer: ")
 
 
-		if player.actionChoice == "1" or player.actionInput == "breathe":
+		if player.actionInput == "1" or player.actionInput == "breathe":
 			breathe(actionContainer, gun, player, enemy)
 		
 		elif player.actionInput == "2" or "bang gun" in player.actionInput:
 			bangGun(actionContainer, gun, player)
+		
+		elif player.actionInput == "3" or "force load" in  player.actionInput:
+			forceLoad(actionContainer, gun, player)
 
 
