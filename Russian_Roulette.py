@@ -51,6 +51,7 @@ playTutorial = startScreen()
 ### Maybe have a mechanic where the play chooses how hard to spin the cylinder ###
 
 if playTutorial == True:
+    print()
     import RR_Tutorial
 
 print("running back on russianroulette.py")

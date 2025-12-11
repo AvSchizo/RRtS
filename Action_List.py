@@ -18,6 +18,7 @@ class actionContainerClass:
 actionContainer = actionContainerClass()
 actionContainer.AV_bangGun = actionClass()
 actionContainer.AV_breathe = actionClass()
+actionContainer.AV_forceLoad = actionClass()
 
 def resetAction(actionContainer):
 	actionContainer.AV_bangGun.usable = True

@@ -14,6 +14,7 @@ roundI = 0
 roundList = [round1, round2, round3]
 
 round1.maxHealth = 2
+round1.gunDmg = 2
 
 round2.maxHealth = 4
 
