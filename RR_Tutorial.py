@@ -66,6 +66,8 @@ flipCoin()
 currentRound = Round_List.roundList[i]
 setCharHealth(player, enemy, currentRound)
 
+# debug round skip
+currentRound.cont = True
 
 while currentRound.cont != True:
 
