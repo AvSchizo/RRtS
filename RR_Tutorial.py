@@ -64,6 +64,7 @@ print()
 flipCoin()
 currentRound = Round_List.roundList[i]
 setCharHealth(player, enemy, currentRound)
+gun.damage = currentRound.gunDmg
 
 
 while currentRound.cont != True:
