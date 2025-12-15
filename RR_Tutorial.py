@@ -246,37 +246,35 @@ time.sleep(1)
 
 while True:
 
-    print()
-    printHealth(player)
-    time.sleep(0.5)
-    printHealth(enemy)
-    time.sleep(0.5)
-    print()
-    print("Options:")
-    print("1] action")
-    player.choiceInput = input("answer: ")
-    
-    
-    if player.choiceInput == "1" or player.choiceInput == "action":
-        print()
-        print("Actions:")
-        print("1] breathe")
-        print("2] bang gun on table")
-        print("3] force load the gun")
-        player.actionInput = input("answer: ")
-        
-        
-        if player.actionInput == "1" or player.actionInput == "breathe":
-            print("breathe mode actived")
-            breathe(actionContainer, gun, player, enemy)
-        
-        elif player.actionInput == "2" or "bang gun" in player.actionInput:
-            bangGun(actionContainer, gun, player)
-        
-        elif player.actionInput == "3" or "force load" in  player.actionInput:
-            forceLoad(actionContainer, gun, player)
-        
-        
-        
-        print()
-        
+	print()
+	printHealth(player)
+	time.sleep(0.5)
+	printHealth(enemy)
+	time.sleep(0.5)
+	print()
+	print("Options:")
+	print("1] action")
+	player.choiceInput = input("answer: ")
+
+
+	if player.choiceInput == "1" or player.choiceInput == "action":
+		print()
+		print("Actions:")
+		print("1] bang gun on table")
+		print("2] force load the gun")
+		player.actionInput = input("answer: ")
+		
+		
+		
+		if player.actionInput == "1" or "bang gun" in player.actionInput:
+			print("You bang the gun on the table")
+			bangGun(actionContainer, gun, player)
+		
+		elif player.actionInput == "2" or "force load" in  player.actionInput:
+			print("You put a bullet into the chamber")
+			forceLoad(actionContainer, gun, player)
+		
+		
+		
+		print()
+		
